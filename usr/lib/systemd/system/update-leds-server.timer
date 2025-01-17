@@ -1,0 +1,9 @@
+[Unit]
+Description=Try to update the leds server every 15 minutes
+
+[Timer]
+OnBootSec=15m
+OnUnitActiveSec=15m
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,11 @@
+[Unit]
+Description=Update the simple HTTP server that can control the Pynq's LEDs
+
+[Service]
+Type=oneshot
+User=root
+Group=root
+ExecStart=/usr/bin/env bash -l -c 'exec /usr/local/bin/update_leds_server.sh'
+
+[Install]
+WantedBy=multi-user.target
