@@ -1,0 +1,7 @@
+Package: leds-server
+Version: 1.0.0
+Section: utils
+Priority: optional
+Architecture: all
+Maintainer: Bryan Honof <bryan.honof+iot@pxl.be>
+Description: Small HTTP server that can control the LEDs on the Pynq-Z2
