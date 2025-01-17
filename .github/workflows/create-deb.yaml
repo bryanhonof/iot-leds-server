@@ -1,0 +1,21 @@
+name: Create DEB package
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: write
+
+jobs:
+  create-deb:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Package project
+        run: dpkg-deb --root-owner-group --build . leds-server.deb
+      - name: Create release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: leds-server.deb

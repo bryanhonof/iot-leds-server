@@ -1,0 +1,12 @@
+[Unit]
+Description=Simple HTTP server that can control the Pynq's LEDs
+
+[Service]
+Type=simple
+User=root
+Group=root
+ExecStart=/usr/bin/env bash -l -c 'exec /usr/local/bin/leds_server.py'
+ExecStop=/bin/kill "$(/bin/ps aux | /bin/grep leds_server.py | /bin/grep -v grep | /usr/bin/awk '{ print $2 }')"
+
+[Install]
+WantedBy=multi-user.target
